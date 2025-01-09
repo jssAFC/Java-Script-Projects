@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.container {
+  border: 5px solid white;
+  height: 100vh;
+  width: auto;
+  padding: 50px;
+  padding-bottom: 300px;
+}
+h1{
+    font-size: 50px;
+    background: linear-gradient(to left,black,rgba(255, 255, 255, 0.422),black);
+    margin-bottom: 30px;
+    width:45%;
+}
+.logo {
+  float: right;
+  height: 200px;
+  width: auto;
+  background-color: white;
+  padding: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.flags {
+  height: 150px;
+  margin-top: 10px;
+}
+
+.us,
+.canada,
+.mexico {
+  margin-right: 10px;
+  display: inline;
+  height: 50px;
+  width: auto;
+  float: left;
+}
+
+.timer {
+  height: 200px;
+  font-size: 20px;
+  padding:20px;
+  line-height: 1.5;   
+  margin:20px;
+  margin-top: 50px;
+}
+
+#hours,#seconds,#days,#minutes{
+    display: inline-block;
+    /* background: linear-gradient(to bottom, white , rgb(0, 0, 0)); */
+    color: whiteblack;
+    background-color: black;
+    margin:20px;
+    margin-top: 0;
+    width:20%;
+    text-align: center;
+    padding-bottom: 10px;
+    border:2px solid white;
+}
+
+#days-text,#hours-text,#minutes-text,#seconds-text{
+  display: inline-block;
+  /* background: linear-gradient(to bottom, white , rgb(0, 0, 0)); */
+  background-color: white;
+  color: black;
+  margin:20px;
+  margin-bottom: 0;
+  width:20%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+
