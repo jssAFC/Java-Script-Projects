@@ -125,18 +125,37 @@ const footballQuiz = [
 ];
 
 function randomQues() {
-    //      This approach is correct but not optimized
-  const data = new Set();
+  //      This approach is correct but not optimized
+  // const data = new Set();
+  // while (data.size != 5) {
+  //   const index = Math.floor(Math.random() * footballQuiz.length);
+  //   data.add(footballQuiz[index]);
+  // }
+  // return [...data];
 
-  while (data.size != 5) {
-    const index = Math.floor(Math.random() * footballQuiz.length);
-    data.add(footballQuiz[index]);
+  //      sort function  nlog(n).
+  // this is even worse appraoch
+  // in this we are used comperator operator which arranges elements based on the returned value. ex- -ve no arranged first and +ve later
+  //   footballQuiz.sort(()=>Math.random()-0.5);
+  // return footballQuiz.slice(0,5);
+
+  //      Fischer algorithm
+  const arr = [];
+  let length = footballQuiz.length;
+
+  for (let i = 0; i < 5; i++) {
+    const index = Math.floor(Math.random() * length);
+    arr.push(footballQuiz[index]);
+
+    // swap
+    [footballQuiz[index], footballQuiz[length - 1]] = [
+      footballQuiz[length - 1],
+      footballQuiz[index],
+    ];
+    length--;
   }
 
-  return [...data];
-
-    //   sort function
-
+  return arr;
 }
 
 //      Select the form and insert all the elements into it
@@ -191,13 +210,11 @@ form.addEventListener("submit", (event) => {
 
   problems.forEach((num) => {
     const [val] = solution;
-        if(val==num.answer) result++;
+    if (val == num.answer) result++;
     // console.log(val,num.answer);
   });
 
-  const output=document.getElementById('answer');
-  output.textContent=`Your result is ${result}`;
+  const output = document.getElementById("answer");
+  output.textContent = `Your result is ${result}`;
   form.append(output);
-
 });
-
